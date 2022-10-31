@@ -1,0 +1,12 @@
+use tienda_informatica;
+
+db.createCollection('Fabricantes');
+db.createCollection('Articulos');
+
+db.Fabricantes.insertMany([{codigo:1,nombre:'Lego'},
+{codigo:2,nombre:'Playmobil'},
+{codigo:3,nombre:'Famosa'}]);
+
+db.Articulos.insertMany([{codigo:11,nombre:'muñeca',precio:10,fabricante:{codigo:3,nombre:'Famosa'}},
+{codigo:12,nombre:'pieza',precio:2,fabricante:{codigo:1,nombre:'Lego'}},
+{codigo:13,nombre:'muñeco articulado',precio:18,fabricante:{codigo:2,nombre:'Playmobil'}}])

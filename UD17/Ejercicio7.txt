@@ -1,0 +1,22 @@
+use grandes_almacenes;
+
+db.createCollection('Cajeros');
+db.createCollection('Productos');
+db.createCollection('Maquinas_registradoras');
+db.createCollection('Venta');
+
+db.Cajeros.insertMany([{codigo:1,nom_apels:'Joan Laporta'},
+{codigo:2,nom_apels:'Florentino Perez'},
+{codigo:3,nom_apels:'Enrique Cerezo'}]);
+
+db.Productos.insertMany([{codigo:11,nombre:'arroz',precio:2},
+{codigo:22,nombre:'lentejas',precio:3},
+{codigo:33,nombre:'pasta',precio:4}]);
+
+db.Maquinas_registradoras.insertMany([{codigo:111,piso:1},
+{codigo:222,piso:2},
+{codigo:333,piso:3}]);
+
+db.Venta.insertMany([{cajero:{codigo:1,nom_apels:'Joan Laporta'},maquina:{codigo:111,piso:1},producto:{codigo:11,nombre:'arroz',precio:2}},
+{cajero:{codigo:2,nom_apels:'Florentino Perez'},maquina:{codigo:222,piso:2},producto:{codigo:22,nombre:'lentejas',precio:3}},
+{cajero:{codigo:3,nom_apels:'Enrique Cerezo'},maquina:{codigo:333,piso:3},producto:{codigo:33,nombre:'pasta',precio:4}}]);

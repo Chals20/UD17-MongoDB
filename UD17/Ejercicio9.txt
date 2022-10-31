@@ -1,0 +1,18 @@
+use cientificos;
+
+db.createCollection('Cientificos');
+db.createCollection('Proyecto');
+db.createCollection('Asignado_a');
+
+
+db.Cientificos.insertMany([{dni:'11111111A',nom_apels:'Michael Jordan'},
+{dni:'22222222B',nom_apels:'Scottie Pippen'},
+{dni:'33333333C',nom_apels:'Dennis Roddman'}]);
+
+db.Protyecto.insertMany([{codigo:1,nombre:'Air Jordan',horas:4000},
+{codigo:2,nombre:'Sextete',horas:20000},
+{codigo:3,nombre:'Mejor Defensor',horas:300}]);
+
+db.Asignado_a.insertMany([{cientifico:{dni:'11111111A',nom_apels:'Michael Jordan'},proyecto:{codigo:1,nombre:'Air Jordan',horas:4000}},
+{cientifico:{dni:'22222222B',nom_apels:'Scottie Pippen'},proyecto:{codigo:2,nombre:'Sextete',horas:20000}},
+{cientifico:{dni:'33333333C',nom_apels:'Dennis Roddman'},proyecto:{codigo:3,nombre:'Mejor Defensor',horas:300}}]);

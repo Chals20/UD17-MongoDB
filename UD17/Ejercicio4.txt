@@ -1,0 +1,14 @@
+use peliculas_salas;
+
+db.createCollection('Salas');
+db.createCollection('Peliculas');
+
+
+db.Peliculas.insertMany([{codigo:1,nombre:'Coach Carter',calificacion_edad:12},
+{codigo:2,nombre:'Hoosiers',calificacion_edad:16},
+{codigo:3,nombre:'Space Jam',calificacion_edad:3}]);
+
+
+db.Salas.insertMany([{codigo:01,nombre:'Sala1',pelicula:{codigo:1,nombre:'Coach Carter',calificacion_edad:12}},
+{codigo:02,nombre:'Sala2',pelicula:{codigo:3,nombre:'Space Jam',calificacion_edad:3}},
+{codigo:03,nombre:'Sala3',pelicula:{codigo:2,nombre:'Hoosiers',calificacion_edad:16}}]);

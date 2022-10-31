@@ -1,0 +1,12 @@
+use empleados;
+
+db.createCollection('Empleados');
+db.createCollection('Departamentos');
+
+db.Departamentos.insertMany([{codigo:1,nombre:'IT',presupuesto:150000},
+{codigo:2,nombre:'Tesoreria',presupuesto:200000},
+{codigo:3,nombre:'Gestoria',presupuesto:101500}]);
+
+db.Empleados.insertMany([{dni:'11111111A',nombre:'Victor',apellidos:'Valdes',departamento:{codigo:1,nombre:'IT',presupuesto:150000}},
+{dni:'22222222B',nombre:'Marc Andre',apellidos:'Ter Stegen',departamento:{codigo:2,nombre:'Tesoreria',presupuesto:200000}},
+{dni:'33333333C',nombre:'Claudio',apellidos:'Bravo',departamento:{codigo:3,nombre:'Gestoria',presupuesto:101500}}]);

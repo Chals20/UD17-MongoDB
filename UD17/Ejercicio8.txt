@@ -1,0 +1,20 @@
+use investigador;
+
+db.createCollection('Facultad');
+db.createCollection('Investigadores');
+db.createCollection('Equipos');
+db.createCollection('Reserva');
+
+db.Facultad.insertMany([{codigo:1,nombre:'Deporte'},
+{codigo:2,nombre:'Derecho'},
+{codigo:3,nombre:'Geografia'}]);
+
+db.Investigadores.insertMany([{dni:'11111111A',nom_apels:'Luis Aragones',facultad:{codigo:1,nombre:'Deporte'}},
+{dni:'22222222B',nom_apels:'Baltasar Garzon',facultad:{codigo:2,nombre:'Derecho'}},
+{dni:'33333333C',nom_apels:'Tomas Molina',facultad:{codigo:333,nombre:'Geografia'}}]);
+
+db.Equipos.insertMany([{numserie:'1111', nombre:'Equipo 1', facultad:{codigo:1, nombre:'Deporte'}},
+{numserie:'2222', nombre:'Equipo 2', facultad:{codigo:2, nombre:'Derecho'}},
+{numserie:'3333', nombre:'Equipo 3', facultad:{codigo:3, nombre:'Geografia'}}]);
+
+db.Reserva.insertOne({dni:{dni:'22222222B', nomapels:'Baltasar Garzon', facultad:{codigo:2, nombre:'Derecho'}}, numserie:{numserie:'2222', nombre:'Equipo 2', facultad:{codigo:2, nombre:'Derecho'}}, comienzo:'2022-10-22 12:22:22', fin:'2022-12-31 23:59:59'});

@@ -1,0 +1,12 @@
+use director;
+
+db.createCollection('Despachos');
+db.createCollection('Directores');
+
+db.Despachos.insertMany([{numero:11,capacidad:3},
+{numero:22,capacidad:5},
+{numero:33,capacidad:8}]);
+
+db.Directores.insertMany([{dni:'11111111A',nom_apels:'Ricky Rubio',dnijefe:{dni:'22222222B',nom_apels:'Joan Carles Navarro', despacho:{numero:22, capacidad:5}},despacho:{numero:11,capacidad:3}},
+{dni:'22222222B',nom_apels:'Joan Carles Navarro',dnijefe:{dni:'33333333C',nom_apels:'Pau Gasol', despacho:{numero:33, capacidad:8}},despacho:{numero:22,capacidad:5}},
+{dni:'33333333C',nom_apels:'Pau Gasol',dnijefe:{dni:'22222222B',nom_apels:'Joan Carles Navarro', despacho:{numero:22, capacidad:5}},despacho:{numero:33,capacidad:8}}]);
